@@ -9,13 +9,13 @@ namespace Db3
 {
     public partial class LoginForm : Form
     {
+        Point lastPoint;
         public LoginForm()
         {
             InitializeComponent();
-
-            this.PassBox.AutoSize = false;
-            this.PassBox.Size = new Size(this.PassBox.Size.Width, 64);
+            PassBox.UseSystemPasswordChar = true;
     }
+
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
@@ -32,7 +32,7 @@ namespace Db3
             CloseButton.ForeColor = Color.White;
         }
 
-        Point lastPoint;
+        
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if(e.Button == MouseButtons.Left)
@@ -86,6 +86,18 @@ namespace Db3
             this.Hide();
             RegisterForm registerForm = new RegisterForm();
             registerForm.Show();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                PassBox.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                PassBox.UseSystemPasswordChar = true;
+            }
         }
     }
 }

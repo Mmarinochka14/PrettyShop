@@ -165,5 +165,12 @@ namespace Db3
             OrderForm orderForm = new OrderForm(currentCustomer);
             orderForm.Show();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LikedForm likedForm = new LikedForm(currentCustomer);
+            likedForm.Show();
+        }
     }
 }

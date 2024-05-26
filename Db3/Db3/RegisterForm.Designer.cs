@@ -101,9 +101,8 @@
             // 
             this.PassBox.Font = new System.Drawing.Font("Minecraft 1.1", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PassBox.Location = new System.Drawing.Point(402, 304);
-            this.PassBox.Multiline = true;
             this.PassBox.Name = "PassBox";
-            this.PassBox.Size = new System.Drawing.Size(257, 64);
+            this.PassBox.Size = new System.Drawing.Size(257, 27);
             this.PassBox.TabIndex = 2;
             this.PassBox.UseSystemPasswordChar = true;
             // 

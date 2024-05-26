@@ -242,6 +242,7 @@
     <None Include="Images\6c9a1fd0f639400b927d93ff85c9e876.jpg" />
     <None Include="Images\12b824e0e635853bb1f13e559007720f.jpg" />
     <None Include="Images\e50667563e425f97899db86e57037cbd.gif" />
+    <None Include="Images\ion_cart.png" />
     <Content Include="Images\like.png" />
     <None Include="Resources\DefaultUserPhoto.bmp" />
   </ItemGroup>

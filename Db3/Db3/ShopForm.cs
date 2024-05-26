@@ -15,7 +15,7 @@ namespace Db3
         public ShopForm()
         {
             InitializeComponent();
-            
+            InitializeListView();
             LoadProducts();
             Products.SelectedIndexChanged += Products_SelectedIndexChanged;
         }
@@ -261,9 +261,18 @@ namespace Db3
 
         private void Orders_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Orders orders = new Orders(currentCustomer);
-            orders.Show();
+            if (currentCustomer == null)
+            {
+                this.Hide();
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+            }
+            else
+            {
+                this.Hide();
+                Orders orders = new Orders(currentCustomer);
+                orders.Show();
+            }
         }
     }
 }

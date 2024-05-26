@@ -160,5 +160,12 @@ namespace Db3
             ShopForm shopForm = new ShopForm(currentCustomer);
             shopForm.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CartForm cartForm = new CartForm(currentCustomer);
+            cartForm.Show();
+        }
     }
 }

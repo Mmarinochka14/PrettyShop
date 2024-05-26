@@ -33,20 +33,22 @@
             this.BtnLogin = new System.Windows.Forms.Button();
             this.PassBox = new System.Windows.Forms.TextBox();
             this.LogBox = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CloseButton = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.RegBtn);
             this.panel1.Controls.Add(this.BtnLogin);
             this.panel1.Controls.Add(this.PassBox);
@@ -64,7 +66,7 @@
             this.RegBtn.AutoSize = true;
             this.RegBtn.Font = new System.Drawing.Font("Minecraft 1.1", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RegBtn.ForeColor = System.Drawing.Color.Lavender;
-            this.RegBtn.Location = new System.Drawing.Point(526, 527);
+            this.RegBtn.Location = new System.Drawing.Point(526, 529);
             this.RegBtn.Name = "RegBtn";
             this.RegBtn.Size = new System.Drawing.Size(181, 20);
             this.RegBtn.TabIndex = 4;
@@ -92,11 +94,13 @@
             // 
             // PassBox
             // 
-            this.PassBox.Font = new System.Drawing.Font("Minecraft 1.1", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PassBox.AllowDrop = true;
+            this.PassBox.Font = new System.Drawing.Font("Minecraft 1.1", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PassBox.Location = new System.Drawing.Point(530, 364);
-            this.PassBox.Multiline = true;
+            this.PassBox.MaximumSize = new System.Drawing.Size(257, 64);
+            this.PassBox.MinimumSize = new System.Drawing.Size(0, 27);
             this.PassBox.Name = "PassBox";
-            this.PassBox.Size = new System.Drawing.Size(257, 64);
+            this.PassBox.Size = new System.Drawing.Size(257, 34);
             this.PassBox.TabIndex = 2;
             this.PassBox.UseSystemPasswordChar = true;
             // 
@@ -108,6 +112,28 @@
             this.LogBox.Name = "LogBox";
             this.LogBox.Size = new System.Drawing.Size(257, 64);
             this.LogBox.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Db3.Properties.Resources._1790670_access_key_lock_safe_safety_icon;
+            this.pictureBox2.InitialImage = null;
+            this.pictureBox2.Location = new System.Drawing.Point(460, 364);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Db3.Properties.Resources._4043272_avatar_lazybones_sloth_sluggard_icon1;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(460, 278);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -147,27 +173,18 @@
             this.label1.Text = "Авторизация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox2
+            // checkBox1
             // 
-            this.pictureBox2.Image = global::Db3.Properties.Resources._1790670_access_key_lock_safe_safety_icon;
-            this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(460, 364);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Db3.Properties.Resources._4043272_avatar_lazybones_sloth_sluggard_icon1;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(460, 278);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Minecraft 1.1", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox1.ForeColor = System.Drawing.Color.Lavender;
+            this.checkBox1.Location = new System.Drawing.Point(530, 405);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(196, 23);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "Показать пароль";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // LoginForm
             // 
@@ -181,10 +198,10 @@
             this.Text = " ";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -201,5 +218,6 @@
         private System.Windows.Forms.Button BtnLogin;
         private System.Windows.Forms.TextBox PassBox;
         private System.Windows.Forms.Label RegBtn;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

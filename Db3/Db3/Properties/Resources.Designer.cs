@@ -183,6 +183,16 @@ namespace Db3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ion_cart {
+            get {
+                object obj = ResourceManager.GetObject("ion_cart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap story_highlight_icons_7420670 {
             get {
                 object obj = ResourceManager.GetObject("story-highlight-icons_7420670", resourceCulture);
