@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +24,31 @@ namespace Db3
             InitializeComponent();
             this.currentCustomer = currentCustomer;
             LoadLiked();
+            Liked.SelectedIndexChanged += Cart_SelectedIndexChanged;
         }
 
+
+        private Image ByteArrayToImage(byte[] byteArray)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArray))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        private void Cart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Liked.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = Liked.SelectedItems[0];
+                Image productImage = (Image)selectedItem.Tag; 
+                ProductPictureBox.Image = productImage; 
+            }
+            else
+            {
+                ProductPictureBox.Image = null; 
+            }
+        }
         private void LoadLiked()
         {
             using (DbConnector db = new DbConnector())
@@ -44,38 +68,20 @@ namespace Db3
                     {
                         string productName = row["name"].ToString();
                         string productPrice = row["price"].ToString();
-                        Liked.Items.Add(new ListViewItem(new string[] { productName, productPrice }));
+                        string productDesc = row["description"].ToString();
+                        byte[] productImageBytes = (byte[])row["image"]; 
+
+                        Image productImage = ByteArrayToImage(productImageBytes);
+                        ListViewItem item = new ListViewItem(new string[] { productName, productDesc, productPrice });
+                        item.Tag = productImage;
+                        Liked.Items.Add(item);
                     }
                 }
                 db.CloseConnection();
             }
         }
 
-        private void RemoveFromLiked_Click(object sender, EventArgs e)
-        {
-            if (Liked.SelectedItems.Count > 0)
-            {
-                ListViewItem selectedItem = Liked.SelectedItems[0];
-                string productName = selectedItem.SubItems[0].Text;
 
-                using (DbConnector db = new DbConnector())
-                {
-                    db.OpenConnection();
-                    using (MySqlCommand command = new MySqlCommand("DELETE FROM liked WHERE customer_id = @userId AND product_id = (SELECT product_id FROM product WHERE name = @productName)", db.GetConnection()))
-                    {
-                        command.Parameters.AddWithValue("@userId", currentCustomer.Id);
-                        command.Parameters.AddWithValue("@productName", productName);
-                        command.ExecuteNonQuery();
-                    }
-                    db.CloseConnection();
-                }
-                LoadLiked();
-            }
-            else
-            {
-                MessageBox.Show("Пожалуйста, выберите продукт для удаления из избранного.");
-            }
-        }
         private void CloseButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -88,7 +94,7 @@ namespace Db3
             lK.Show();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void Cart_Click(object sender, EventArgs e)
         {
             if (Liked.SelectedItems.Count > 0)
             {
@@ -118,7 +124,33 @@ namespace Db3
             }
             else
             {
-                MessageBox.Show("Пожалуйста, выберите продукт для добавления в избранное.");
+                MessageBox.Show("Пожалуйста, выберите продукт для добавления в корзину.");
+            }
+        }
+
+        private void RemoveFromLiked_Click(object sender, EventArgs e)
+        {
+            if (Liked.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = Liked.SelectedItems[0];
+                string productName = selectedItem.SubItems[0].Text;
+
+                using (DbConnector db = new DbConnector())
+                {
+                    db.OpenConnection();
+                    using (MySqlCommand command = new MySqlCommand("DELETE FROM liked WHERE customer_id = @userId AND product_id = (SELECT product_id FROM product WHERE name = @productName)", db.GetConnection()))
+                    {
+                        command.Parameters.AddWithValue("@userId", currentCustomer.Id);
+                        command.Parameters.AddWithValue("@productName", productName);
+                        command.ExecuteNonQuery();
+                    }
+                    db.CloseConnection();
+                }
+                LoadLiked();
+            }
+            else
+            {
+                MessageBox.Show("Пожалуйста, выберите продукт для удаления из избранного.");
             }
         }
 

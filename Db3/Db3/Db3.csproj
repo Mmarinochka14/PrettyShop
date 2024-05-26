@@ -142,12 +142,19 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\OrderItem.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="OrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OrderForm.Designer.cs">
       <DependentUpon>OrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orders.Designer.cs">
+      <DependentUpon>Orders.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -177,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -227,7 +237,13 @@
     <None Include="Images\1564508_home_main_room_estate_property_icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Images\353fd23a1e1ed1a6613a5f929e7a447f.jpg" />
+    <None Include="Images\9dce24bf941426e823775d5d95bd5bb2.jpg" />
+    <None Include="Images\6c9a1fd0f639400b927d93ff85c9e876.jpg" />
+    <None Include="Images\12b824e0e635853bb1f13e559007720f.jpg" />
+    <None Include="Images\e50667563e425f97899db86e57037cbd.gif" />
     <Content Include="Images\like.png" />
+    <None Include="Resources\DefaultUserPhoto.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

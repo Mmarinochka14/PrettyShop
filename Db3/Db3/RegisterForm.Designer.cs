@@ -37,16 +37,17 @@
             this.AddressBox = new System.Windows.Forms.TextBox();
             this.BtnLogin = new System.Windows.Forms.Button();
             this.regPanel = new System.Windows.Forms.Panel();
-            this.RegBtn = new System.Windows.Forms.Label();
+            this.AddPhoto = new System.Windows.Forms.Label();
+            this.LogiBtn = new System.Windows.Forms.Label();
+            this.pictureBoxUserPhoto = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.LogiBtn = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel2.SuspendLayout();
             this.regPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -82,7 +83,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1200, 71);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Registration";
+            this.label1.Text = "Регистрация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LogBox
@@ -155,10 +156,10 @@
             // regPanel
             // 
             this.regPanel.AutoSize = true;
-            this.regPanel.BackColor = System.Drawing.Color.Lavender;
+            this.regPanel.BackColor = System.Drawing.SystemColors.WindowText;
+            this.regPanel.Controls.Add(this.AddPhoto);
             this.regPanel.Controls.Add(this.LogiBtn);
-            this.regPanel.Controls.Add(this.pictureBox3);
-            this.regPanel.Controls.Add(this.RegBtn);
+            this.regPanel.Controls.Add(this.pictureBoxUserPhoto);
             this.regPanel.Controls.Add(this.BtnLogin);
             this.regPanel.Controls.Add(this.AddressBox);
             this.regPanel.Controls.Add(this.PhoneBox);
@@ -172,17 +173,40 @@
             this.regPanel.Size = new System.Drawing.Size(1200, 800);
             this.regPanel.TabIndex = 1;
             // 
-            // RegBtn
+            // AddPhoto
             // 
-            this.RegBtn.AutoSize = true;
-            this.RegBtn.Font = new System.Drawing.Font("Minecraft 1.1", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RegBtn.ForeColor = System.Drawing.Color.Lavender;
-            this.RegBtn.Location = new System.Drawing.Point(198, 442);
-            this.RegBtn.Name = "RegBtn";
-            this.RegBtn.Size = new System.Drawing.Size(61, 17);
-            this.RegBtn.TabIndex = 5;
-            this.RegBtn.Text = "Sign in";
-            this.RegBtn.Click += new System.EventHandler(this.RegBtn_Click);
+            this.AddPhoto.AutoSize = true;
+            this.AddPhoto.BackColor = System.Drawing.Color.Black;
+            this.AddPhoto.Font = new System.Drawing.Font("Minecraft 1.1", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddPhoto.ForeColor = System.Drawing.Color.Lavender;
+            this.AddPhoto.Location = new System.Drawing.Point(706, 482);
+            this.AddPhoto.Name = "AddPhoto";
+            this.AddPhoto.Size = new System.Drawing.Size(145, 40);
+            this.AddPhoto.TabIndex = 11;
+            this.AddPhoto.Text = "Добавить \r\nфото профиля";
+            this.AddPhoto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.AddPhoto.Click += new System.EventHandler(this.buttonUploadPhoto_Click);
+            // 
+            // LogiBtn
+            // 
+            this.LogiBtn.AutoSize = true;
+            this.LogiBtn.Font = new System.Drawing.Font("Minecraft 1.1", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LogiBtn.ForeColor = System.Drawing.Color.Lavender;
+            this.LogiBtn.Location = new System.Drawing.Point(494, 695);
+            this.LogiBtn.Name = "LogiBtn";
+            this.LogiBtn.Size = new System.Drawing.Size(253, 20);
+            this.LogiBtn.TabIndex = 7;
+            this.LogiBtn.Text = "У меня уже есть аккаунт";
+            this.LogiBtn.Click += new System.EventHandler(this.LogiBtn_Click);
+            // 
+            // pictureBoxUserPhoto
+            // 
+            this.pictureBoxUserPhoto.Location = new System.Drawing.Point(682, 218);
+            this.pictureBoxUserPhoto.Name = "pictureBoxUserPhoto";
+            this.pictureBoxUserPhoto.Size = new System.Drawing.Size(197, 241);
+            this.pictureBoxUserPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxUserPhoto.TabIndex = 6;
+            this.pictureBoxUserPhoto.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -206,25 +230,9 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox3
+            // openFileDialog1
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(690, 218);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(189, 241);
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
-            // 
-            // LogiBtn
-            // 
-            this.LogiBtn.AutoSize = true;
-            this.LogiBtn.Font = new System.Drawing.Font("Minecraft 1.1", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LogiBtn.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.LogiBtn.Location = new System.Drawing.Point(494, 695);
-            this.LogiBtn.Name = "LogiBtn";
-            this.LogiBtn.Size = new System.Drawing.Size(253, 20);
-            this.LogiBtn.TabIndex = 7;
-            this.LogiBtn.Text = "У меня уже есть аккаунт";
-            this.LogiBtn.Click += new System.EventHandler(this.LogiBtn_Click);
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // RegisterForm
             // 
@@ -240,9 +248,9 @@
             this.panel2.PerformLayout();
             this.regPanel.ResumeLayout(false);
             this.regPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserPhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,8 +269,9 @@
         private System.Windows.Forms.TextBox AddressBox;
         private System.Windows.Forms.Button BtnLogin;
         private System.Windows.Forms.Panel regPanel;
-        private System.Windows.Forms.Label RegBtn;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBoxUserPhoto;
         private System.Windows.Forms.Label LogiBtn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label AddPhoto;
     }
 }

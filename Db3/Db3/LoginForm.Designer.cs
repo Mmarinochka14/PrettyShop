@@ -33,22 +33,20 @@
             this.BtnLogin = new System.Windows.Forms.Button();
             this.PassBox = new System.Windows.Forms.TextBox();
             this.LogBox = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CloseButton = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.RegBtn);
             this.panel1.Controls.Add(this.BtnLogin);
             this.panel1.Controls.Add(this.PassBox);
@@ -64,11 +62,11 @@
             // RegBtn
             // 
             this.RegBtn.AutoSize = true;
-            this.RegBtn.Font = new System.Drawing.Font("Minecraft 1.1", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegBtn.Font = new System.Drawing.Font("Minecraft 1.1", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RegBtn.ForeColor = System.Drawing.Color.Lavender;
-            this.RegBtn.Location = new System.Drawing.Point(501, 503);
+            this.RegBtn.Location = new System.Drawing.Point(526, 527);
             this.RegBtn.Name = "RegBtn";
-            this.RegBtn.Size = new System.Drawing.Size(159, 17);
+            this.RegBtn.Size = new System.Drawing.Size(181, 20);
             this.RegBtn.TabIndex = 4;
             this.RegBtn.Text = "Создать аккаунт";
             this.RegBtn.Click += new System.EventHandler(this.RegBtn_Click);
@@ -84,9 +82,9 @@
             this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLogin.Font = new System.Drawing.Font("Minecraft 1.1", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLogin.ForeColor = System.Drawing.Color.Lavender;
-            this.BtnLogin.Location = new System.Drawing.Point(453, 425);
+            this.BtnLogin.Location = new System.Drawing.Point(460, 449);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(257, 64);
+            this.BtnLogin.Size = new System.Drawing.Size(327, 64);
             this.BtnLogin.TabIndex = 3;
             this.BtnLogin.Text = "Войти";
             this.BtnLogin.UseVisualStyleBackColor = false;
@@ -95,7 +93,7 @@
             // PassBox
             // 
             this.PassBox.Font = new System.Drawing.Font("Minecraft 1.1", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassBox.Location = new System.Drawing.Point(491, 340);
+            this.PassBox.Location = new System.Drawing.Point(530, 364);
             this.PassBox.Multiline = true;
             this.PassBox.Name = "PassBox";
             this.PassBox.Size = new System.Drawing.Size(257, 64);
@@ -105,33 +103,11 @@
             // LogBox
             // 
             this.LogBox.Font = new System.Drawing.Font("Minecraft 1.1", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogBox.Location = new System.Drawing.Point(491, 254);
+            this.LogBox.Location = new System.Drawing.Point(530, 278);
             this.LogBox.Multiline = true;
             this.LogBox.Name = "LogBox";
             this.LogBox.Size = new System.Drawing.Size(257, 64);
             this.LogBox.TabIndex = 2;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Db3.Properties.Resources._1790670_access_key_lock_safe_safety_icon;
-            this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(421, 340);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Db3.Properties.Resources._4043272_avatar_lazybones_sloth_sluggard_icon1;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(421, 254);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -168,19 +144,30 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1202, 71);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Autorization";
+            this.label1.Text = "Авторизация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // pictureBox2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Minecraft 1.1", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Lavender;
-            this.label2.Location = new System.Drawing.Point(450, 534);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Забыли пароль?";
+            this.pictureBox2.Image = global::Db3.Properties.Resources._1790670_access_key_lock_safe_safety_icon;
+            this.pictureBox2.InitialImage = null;
+            this.pictureBox2.Location = new System.Drawing.Point(460, 364);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Db3.Properties.Resources._4043272_avatar_lazybones_sloth_sluggard_icon1;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(460, 278);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // LoginForm
             // 
@@ -194,10 +181,10 @@
             this.Text = " ";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -214,6 +201,5 @@
         private System.Windows.Forms.Button BtnLogin;
         private System.Windows.Forms.TextBox PassBox;
         private System.Windows.Forms.Label RegBtn;
-        private System.Windows.Forms.Label label2;
     }
 }

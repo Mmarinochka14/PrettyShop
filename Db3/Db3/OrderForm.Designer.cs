@@ -31,17 +31,14 @@ namespace Db3
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.addressBox = new System.Windows.Forms.TextBox();
+            this.finalPriceLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.PaymentBox = new System.Windows.Forms.CheckedListBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.addressBox = new System.Windows.Forms.CheckedListBox();
-            this.HomeBtn = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.OrderBtn = new System.Windows.Forms.Button();
             this.Order = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -49,8 +46,9 @@ namespace Db3
             this.panel2 = new System.Windows.Forms.Panel();
             this.CloseButton = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HomeBtn)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,15 +56,16 @@ namespace Db3
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.checkBox3);
-            this.panel1.Controls.Add(this.checkBox2);
-            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.addressBox);
-            this.panel1.Controls.Add(this.HomeBtn);
+            this.panel1.Controls.Add(this.finalPriceLabel);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.PaymentBox);
+            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.listView1);
             this.panel1.Controls.Add(this.OrderBtn);
             this.panel1.Controls.Add(this.Order);
             this.panel1.Controls.Add(this.panel2);
@@ -75,33 +74,58 @@ namespace Db3
             this.panel1.Size = new System.Drawing.Size(1202, 805);
             this.panel1.TabIndex = 2;
             // 
-            // checkBox3
+            // addressBox
             // 
-            this.checkBox3.Font = new System.Drawing.Font("Gilroy", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox3.ForeColor = System.Drawing.Color.Lavender;
-            this.checkBox3.Location = new System.Drawing.Point(838, 307);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(199, 36);
-            this.checkBox3.TabIndex = 22;
-            this.checkBox3.Text = "Картой при получении";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.addressBox.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.addressBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.addressBox.Font = new System.Drawing.Font("Gilroy", 11.25F, System.Drawing.FontStyle.Bold);
+            this.addressBox.ForeColor = System.Drawing.Color.Lavender;
+            this.addressBox.Location = new System.Drawing.Point(865, 240);
+            this.addressBox.Multiline = true;
+            this.addressBox.Name = "addressBox";
+            this.addressBox.Size = new System.Drawing.Size(216, 46);
+            this.addressBox.TabIndex = 27;
             // 
-            // checkBox2
+            // finalPriceLabel
             // 
-            this.checkBox2.Font = new System.Drawing.Font("Gilroy", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox2.ForeColor = System.Drawing.Color.Lavender;
-            this.checkBox2.Location = new System.Drawing.Point(838, 265);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(199, 36);
-            this.checkBox2.TabIndex = 21;
-            this.checkBox2.Text = "Наличными";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.finalPriceLabel.AutoSize = true;
+            this.finalPriceLabel.Font = new System.Drawing.Font("Minecraft 1.1", 14.25F, System.Drawing.FontStyle.Bold);
+            this.finalPriceLabel.ForeColor = System.Drawing.Color.Lavender;
+            this.finalPriceLabel.Location = new System.Drawing.Point(974, 414);
+            this.finalPriceLabel.Name = "finalPriceLabel";
+            this.finalPriceLabel.Size = new System.Drawing.Size(67, 23);
+            this.finalPriceLabel.TabIndex = 25;
+            this.finalPriceLabel.Text = "final";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Lavender;
+            this.label5.Location = new System.Drawing.Point(92, 600);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.TabIndex = 24;
+            // 
+            // PaymentBox
+            // 
+            this.PaymentBox.BackColor = System.Drawing.SystemColors.MenuText;
+            this.PaymentBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.PaymentBox.Font = new System.Drawing.Font("Gilroy", 11.25F, System.Drawing.FontStyle.Bold);
+            this.PaymentBox.ForeColor = System.Drawing.Color.Lavender;
+            this.PaymentBox.FormattingEnabled = true;
+            this.PaymentBox.Items.AddRange(new object[] {
+            "Наличными",
+            "Картой при получении"});
+            this.PaymentBox.Location = new System.Drawing.Point(865, 326);
+            this.PaymentBox.Name = "PaymentBox";
+            this.PaymentBox.Size = new System.Drawing.Size(216, 42);
+            this.PaymentBox.TabIndex = 23;
             // 
             // checkBox1
             // 
             this.checkBox1.Font = new System.Drawing.Font("Gilroy", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBox1.ForeColor = System.Drawing.Color.Lavender;
-            this.checkBox1.Location = new System.Drawing.Point(651, 368);
+            this.checkBox1.Location = new System.Drawing.Point(703, 475);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(371, 73);
             this.checkBox1.TabIndex = 20;
@@ -109,34 +133,12 @@ namespace Db3
     "анных";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // addressBox
-            // 
-            this.addressBox.FormattingEnabled = true;
-            this.addressBox.Location = new System.Drawing.Point(838, 185);
-            this.addressBox.Name = "addressBox";
-            this.addressBox.Size = new System.Drawing.Size(184, 49);
-            this.addressBox.TabIndex = 19;
-            // 
-            // HomeBtn
-            // 
-            this.HomeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.HomeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HomeBtn.Image = global::Db3.Properties.Resources._1564508_home_main_room_estate_property_icon;
-            this.HomeBtn.InitialImage = null;
-            this.HomeBtn.Location = new System.Drawing.Point(1121, 103);
-            this.HomeBtn.Name = "HomeBtn";
-            this.HomeBtn.Size = new System.Drawing.Size(50, 50);
-            this.HomeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.HomeBtn.TabIndex = 17;
-            this.HomeBtn.TabStop = false;
-            this.HomeBtn.Click += new System.EventHandler(this.HomeBtn_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Minecraft 1.1", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.Lavender;
-            this.label4.Location = new System.Drawing.Point(91, 648);
+            this.label4.Location = new System.Drawing.Point(121, 579);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(277, 23);
             this.label4.TabIndex = 16;
@@ -147,7 +149,7 @@ namespace Db3
             // 
             this.label3.Font = new System.Drawing.Font("Minecraft 1.1", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.Lavender;
-            this.label3.Location = new System.Drawing.Point(647, 275);
+            this.label3.Location = new System.Drawing.Point(699, 321);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 47);
             this.label3.TabIndex = 15;
@@ -157,39 +159,11 @@ namespace Db3
             // 
             this.label2.Font = new System.Drawing.Font("Minecraft 1.1", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Lavender;
-            this.label2.Location = new System.Drawing.Point(647, 188);
+            this.label2.Location = new System.Drawing.Point(699, 234);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 46);
             this.label2.TabIndex = 14;
             this.label2.Text = "Адрес доставки";
-            // 
-            // listView1
-            // 
-            this.listView1.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
-            this.listView1.BackColor = System.Drawing.Color.Black;
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.listView1.Font = new System.Drawing.Font("SkogenSpelFont", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.ForeColor = System.Drawing.Color.Lavender;
-            this.listView1.FullRowSelect = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(28, 368);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(293, 50);
-            this.listView1.TabIndex = 11;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Tile;
-            this.listView1.Click += new System.EventHandler(this.Cart_Click);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.DisplayIndex = 1;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.DisplayIndex = 0;
             // 
             // OrderBtn
             // 
@@ -202,7 +176,7 @@ namespace Db3
             this.OrderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OrderBtn.Font = new System.Drawing.Font("Minecraft 1.1", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OrderBtn.ForeColor = System.Drawing.Color.Lavender;
-            this.OrderBtn.Location = new System.Drawing.Point(651, 481);
+            this.OrderBtn.Location = new System.Drawing.Point(703, 554);
             this.OrderBtn.Name = "OrderBtn";
             this.OrderBtn.Size = new System.Drawing.Size(371, 70);
             this.OrderBtn.TabIndex = 9;
@@ -222,9 +196,9 @@ namespace Db3
             this.Order.ForeColor = System.Drawing.Color.Lavender;
             this.Order.FullRowSelect = true;
             this.Order.HideSelection = false;
-            this.Order.Location = new System.Drawing.Point(73, 157);
+            this.Order.Location = new System.Drawing.Point(125, 234);
             this.Order.Name = "Order";
-            this.Order.Size = new System.Drawing.Size(518, 394);
+            this.Order.Size = new System.Drawing.Size(505, 314);
             this.Order.TabIndex = 7;
             this.Order.UseCompatibleStateImageBehavior = false;
             this.Order.View = System.Windows.Forms.View.Tile;
@@ -270,8 +244,30 @@ namespace Db3
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1202, 71);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Order";
+            this.label1.Text = "Оформление заказа";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Minecraft 1.1", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.Lavender;
+            this.label6.Location = new System.Drawing.Point(703, 414);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(133, 23);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "К оплате: ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Minecraft 1.1", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.Color.Lavender;
+            this.label7.Location = new System.Drawing.Point(1047, 396);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(34, 43);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "₽";
             // 
             // OrderForm
             // 
@@ -285,7 +281,6 @@ namespace Db3
             this.Text = "ShopForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HomeBtn)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -308,16 +303,15 @@ namespace Db3
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button OrderBtn;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox HomeBtn;
-        private System.Windows.Forms.CheckedListBox addressBox;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckedListBox PaymentBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox addressBox;
+        public System.Windows.Forms.Label finalPriceLabel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

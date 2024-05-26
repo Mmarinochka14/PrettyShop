@@ -15,7 +15,7 @@ namespace Db3
         public ShopForm()
         {
             InitializeComponent();
-            InitializeListView();
+            
             LoadProducts();
             Products.SelectedIndexChanged += Products_SelectedIndexChanged;
         }
@@ -23,6 +23,7 @@ namespace Db3
         public ShopForm(Customer customer)
         {
             InitializeComponent();
+            InitializeListView();
             this.currentCustomer = customer;
             LoadProducts();
             Products.SelectedIndexChanged += Products_SelectedIndexChanged;
@@ -101,28 +102,39 @@ namespace Db3
         }
         private void AddToCart_Click(object sender, EventArgs e)
         {
-            if (Products.SelectedItems.Count > 0)
+            if (currentCustomer == null)
             {
-                ListViewItem selectedItem = Products.SelectedItems[0];
-                string productName = selectedItem.SubItems[0].Text;
-
-                using (DbConnector db = new DbConnector())
-                {
-                    db.OpenConnection();
-                    using (MySqlCommand command = new MySqlCommand("INSERT INTO cart (customer_id, product_id) SELECT @userId, product_id FROM product WHERE name = @productName", db.GetConnection()))
-                    {
-                        command.Parameters.AddWithValue("@userId", currentCustomer.Id);
-                        command.Parameters.AddWithValue("@productName", productName);
-                        command.ExecuteNonQuery();
-                    }
-                    db.CloseConnection();
-                }
+                MessageBox.Show("Пожалуйста, выполните вход в личный кабинет!");
+                this.Hide();
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
             }
             else
             {
-                MessageBox.Show("Пожалуйста, выберите продукт для добавления в корзину.");
+                if (Products.SelectedItems.Count > 0)
+                {
+                    ListViewItem selectedItem = Products.SelectedItems[0];
+                    string productName = selectedItem.SubItems[0].Text;
+
+                    using (DbConnector db = new DbConnector())
+                    {
+                        db.OpenConnection();
+                        using (MySqlCommand command = new MySqlCommand("INSERT INTO cart (customer_id, product_id) SELECT @userId, product_id FROM product WHERE name = @productName", db.GetConnection()))
+                        {
+                            command.Parameters.AddWithValue("@userId", currentCustomer.Id);
+                            command.Parameters.AddWithValue("@productName", productName);
+                            command.ExecuteNonQuery();
+                        }
+                        db.CloseConnection();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Пожалуйста, выберите продукт для добавления в корзину.");
+                }
             }
         }
+            
 
         public bool IsUserAuthenticated()
         {
@@ -153,48 +165,105 @@ namespace Db3
 
         private void LkBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            LK lK = new LK();
-            lK.Show();
+            if (!IsUserAuthenticated())
+            {
+                MessageBox.Show("Пожалуйста, войдите в систему!");
+                this.Hide();
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+            }
+            else
+            {
+                this.Hide();
+                LK lK = new LK(currentCustomer);
+                lK.Show();
+            }
         }
 
         private void LogInBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
+            if (currentCustomer == null)
+            {
+                this.Hide();
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+            }
+            else
+            {
+                this.Hide();
+                ShopForm shopForm = new ShopForm(null);
+                shopForm.Show();
+            }
+            
         }
 
         private void Like_Click(object sender, EventArgs e)
         {
-            if (Products.SelectedItems.Count > 0)
+            if (currentCustomer == null)
             {
-                ListViewItem selectedItem = Products.SelectedItems[0];
-                string productName = selectedItem.SubItems[0].Text;
-
-                using (DbConnector db = new DbConnector())
-                {
-                    db.OpenConnection();
-                    using (MySqlCommand command = new MySqlCommand("INSERT INTO liked (customer_id, product_id) SELECT @userId, product_id FROM product WHERE name = @productName", db.GetConnection()))
-                    {
-                        command.Parameters.AddWithValue("@userId", currentCustomer.Id);
-                        command.Parameters.AddWithValue("@productName", productName);
-                        command.ExecuteNonQuery();
-                    }
-                    db.CloseConnection();
-                }
+                MessageBox.Show("Пожалуйста, выполните вход в личный кабинет!");
+                this.Hide();
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
             }
             else
             {
-                MessageBox.Show("Пожалуйста, выберите продукт для добавления в избранное.");
+                if (Products.SelectedItems.Count > 0)
+                {
+                    ListViewItem selectedItem = Products.SelectedItems[0];
+                    string productName = selectedItem.SubItems[0].Text;
+
+                    using (DbConnector db = new DbConnector())
+                    {
+                        db.OpenConnection();
+                        using (MySqlCommand command = new MySqlCommand("INSERT INTO liked (customer_id, product_id) SELECT @userId, product_id FROM product WHERE name = @productName", db.GetConnection()))
+                        {
+                            command.Parameters.AddWithValue("@userId", currentCustomer.Id);
+                            command.Parameters.AddWithValue("@productName", productName);
+                            command.ExecuteNonQuery();
+                        }
+                        db.CloseConnection();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Пожалуйста, выберите продукт для добавления в избранное.");
+                }
             }
         }
 
+        private void CloseButton_MouseEnter(object sender, EventArgs e)
+        {
+            CloseButton.ForeColor = Color.Black;
+        }
+
+        private void CloseButton_MouseLeave(object sender, EventArgs e)
+        {
+            CloseButton.ForeColor = Color.White;
+        }
         private void LikedBtn_Click(object sender, EventArgs e)
         {
+            if (!IsUserAuthenticated())
+            {
+                MessageBox.Show("Пожалуйста, войдите в систему для доступа к избранному.");
+                this.Hide();
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+            }
+            else
+            {
+                this.Hide();
+                LikedForm likedForm = new LikedForm(currentCustomer);
+                likedForm.Show();
+            }
+            
+        }
+
+        private void Orders_Click(object sender, EventArgs e)
+        {
             this.Hide();
-            LikedForm likedForm = new LikedForm(currentCustomer);
-            likedForm.Show();
+            Orders orders = new Orders(currentCustomer);
+            orders.Show();
         }
     }
 }

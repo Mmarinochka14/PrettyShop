@@ -40,7 +40,6 @@ namespace Db3
             this.Cart = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LkBtn = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CloseButton = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,7 +47,6 @@ namespace Db3
             ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomeBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LkBtn)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +61,6 @@ namespace Db3
             this.panel1.Controls.Add(this.DeleteBtn);
             this.panel1.Controls.Add(this.HomeBtn);
             this.panel1.Controls.Add(this.Cart);
-            this.panel1.Controls.Add(this.LkBtn);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -73,6 +70,7 @@ namespace Db3
             // ProductPictureBox
             // 
             this.ProductPictureBox.BackColor = System.Drawing.Color.Black;
+            this.ProductPictureBox.Image = global::Db3.Properties.Resources._6c9a1fd0f639400b927d93ff85c9e876;
             this.ProductPictureBox.Location = new System.Drawing.Point(79, 217);
             this.ProductPictureBox.Name = "ProductPictureBox";
             this.ProductPictureBox.Size = new System.Drawing.Size(327, 329);
@@ -91,7 +89,7 @@ namespace Db3
             this.OrderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OrderBtn.Font = new System.Drawing.Font("Minecraft 1.1", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OrderBtn.ForeColor = System.Drawing.Color.Lavender;
-            this.OrderBtn.Location = new System.Drawing.Point(724, 667);
+            this.OrderBtn.Location = new System.Drawing.Point(512, 565);
             this.OrderBtn.Name = "OrderBtn";
             this.OrderBtn.Size = new System.Drawing.Size(332, 73);
             this.OrderBtn.TabIndex = 11;
@@ -158,9 +156,9 @@ namespace Db3
             this.Cart.ForeColor = System.Drawing.Color.Lavender;
             this.Cart.FullRowSelect = true;
             this.Cart.HideSelection = false;
-            this.Cart.Location = new System.Drawing.Point(522, 217);
+            this.Cart.Location = new System.Drawing.Point(512, 217);
             this.Cart.Name = "Cart";
-            this.Cart.Size = new System.Drawing.Size(534, 329);
+            this.Cart.Size = new System.Drawing.Size(544, 329);
             this.Cart.TabIndex = 7;
             this.Cart.UseCompatibleStateImageBehavior = false;
             this.Cart.View = System.Windows.Forms.View.Tile;
@@ -172,18 +170,6 @@ namespace Db3
             // columnHeader4
             // 
             this.columnHeader4.DisplayIndex = 0;
-            // 
-            // LkBtn
-            // 
-            this.LkBtn.Image = global::Db3.Properties.Resources._1564534_customer_man_user_account_profile_icon;
-            this.LkBtn.InitialImage = null;
-            this.LkBtn.Location = new System.Drawing.Point(1073, 90);
-            this.LkBtn.Name = "LkBtn";
-            this.LkBtn.Size = new System.Drawing.Size(50, 50);
-            this.LkBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LkBtn.TabIndex = 2;
-            this.LkBtn.TabStop = false;
-            this.LkBtn.Click += new System.EventHandler(this.LkBtn_Click);
             // 
             // panel2
             // 
@@ -218,7 +204,7 @@ namespace Db3
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1200, 71);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cart";
+            this.label1.Text = "Корзина";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CartForm
@@ -235,7 +221,6 @@ namespace Db3
             ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomeBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LkBtn)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -248,7 +233,6 @@ namespace Db3
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label CloseButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox LkBtn;
         private System.Windows.Forms.ListView Cart;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;

@@ -34,20 +34,27 @@ namespace Db3
             this.Liked = new System.Windows.Forms.ListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LkBtn = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CloseButton = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.OrderBtn = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.ProductPictureBox = new System.Windows.Forms.PictureBox();
+            this.HomeBtn = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LkBtn)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomeBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.HomeBtn);
+            this.panel1.Controls.Add(this.ProductPictureBox);
+            this.panel1.Controls.Add(this.OrderBtn);
+            this.panel1.Controls.Add(this.DeleteBtn);
             this.panel1.Controls.Add(this.Liked);
-            this.panel1.Controls.Add(this.LkBtn);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -66,9 +73,9 @@ namespace Db3
             this.Liked.ForeColor = System.Drawing.Color.Lavender;
             this.Liked.FullRowSelect = true;
             this.Liked.HideSelection = false;
-            this.Liked.Location = new System.Drawing.Point(79, 159);
+            this.Liked.Location = new System.Drawing.Point(568, 244);
             this.Liked.Name = "Liked";
-            this.Liked.Size = new System.Drawing.Size(653, 257);
+            this.Liked.Size = new System.Drawing.Size(526, 427);
             this.Liked.TabIndex = 3;
             this.Liked.UseCompatibleStateImageBehavior = false;
             this.Liked.View = System.Windows.Forms.View.Tile;
@@ -80,18 +87,6 @@ namespace Db3
             // columnHeader1
             // 
             this.columnHeader1.DisplayIndex = 0;
-            // 
-            // LkBtn
-            // 
-            this.LkBtn.Image = global::Db3.Properties.Resources._1564534_customer_man_user_account_profile_icon;
-            this.LkBtn.InitialImage = null;
-            this.LkBtn.Location = new System.Drawing.Point(1127, 90);
-            this.LkBtn.Name = "LkBtn";
-            this.LkBtn.Size = new System.Drawing.Size(50, 50);
-            this.LkBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LkBtn.TabIndex = 2;
-            this.LkBtn.TabStop = false;
-            this.LkBtn.Click += new System.EventHandler(this.LkBtn_Click);
             // 
             // panel2
             // 
@@ -126,8 +121,71 @@ namespace Db3
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1203, 71);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Liked";
+            this.label1.Text = "Избранное";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OrderBtn
+            // 
+            this.OrderBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.OrderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OrderBtn.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
+            this.OrderBtn.FlatAppearance.BorderSize = 0;
+            this.OrderBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.OrderBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.OrderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OrderBtn.Font = new System.Drawing.Font("Minecraft 1.1", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OrderBtn.ForeColor = System.Drawing.Color.Lavender;
+            this.OrderBtn.Location = new System.Drawing.Point(245, 606);
+            this.OrderBtn.Name = "OrderBtn";
+            this.OrderBtn.Size = new System.Drawing.Size(174, 65);
+            this.OrderBtn.TabIndex = 14;
+            this.OrderBtn.Text = "В корзину";
+            this.OrderBtn.UseVisualStyleBackColor = false;
+            this.OrderBtn.Click += new System.EventHandler(this.Cart_Click);
+            // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteBtn.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
+            this.DeleteBtn.FlatAppearance.BorderSize = 0;
+            this.DeleteBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.DeleteBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteBtn.Font = new System.Drawing.Font("Minecraft 1.1", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteBtn.ForeColor = System.Drawing.Color.Lavender;
+            this.DeleteBtn.Location = new System.Drawing.Point(92, 606);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(147, 65);
+            this.DeleteBtn.TabIndex = 12;
+            this.DeleteBtn.Text = "Удалить";
+            this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.RemoveFromLiked_Click);
+            // 
+            // ProductPictureBox
+            // 
+            this.ProductPictureBox.BackColor = System.Drawing.Color.Black;
+            this.ProductPictureBox.Image = global::Db3.Properties.Resources._12b824e0e635853bb1f13e559007720f;
+            this.ProductPictureBox.Location = new System.Drawing.Point(92, 244);
+            this.ProductPictureBox.Name = "ProductPictureBox";
+            this.ProductPictureBox.Size = new System.Drawing.Size(327, 329);
+            this.ProductPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProductPictureBox.TabIndex = 15;
+            this.ProductPictureBox.TabStop = false;
+            // 
+            // HomeBtn
+            // 
+            this.HomeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.HomeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HomeBtn.Image = global::Db3.Properties.Resources._1564508_home_main_room_estate_property_icon;
+            this.HomeBtn.InitialImage = null;
+            this.HomeBtn.Location = new System.Drawing.Point(1124, 95);
+            this.HomeBtn.Name = "HomeBtn";
+            this.HomeBtn.Size = new System.Drawing.Size(50, 50);
+            this.HomeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HomeBtn.TabIndex = 16;
+            this.HomeBtn.TabStop = false;
+            this.HomeBtn.Click += new System.EventHandler(this.HomeBtn_Click);
             // 
             // LikedForm
             // 
@@ -140,9 +198,10 @@ namespace Db3
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShopForm";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LkBtn)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomeBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -153,9 +212,12 @@ namespace Db3
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label CloseButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox LkBtn;
         private System.Windows.Forms.ListView Liked;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Button OrderBtn;
+        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.PictureBox ProductPictureBox;
+        private System.Windows.Forms.PictureBox HomeBtn;
     }
 }

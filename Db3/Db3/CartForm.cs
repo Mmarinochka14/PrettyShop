@@ -41,12 +41,12 @@ namespace Db3
             if (Cart.SelectedItems.Count > 0)
             {
                 ListViewItem selectedItem = Cart.SelectedItems[0];
-                Image productImage = (Image)selectedItem.Tag; // Извлекаем изображение из свойства Tag
-                ProductPictureBox.Image = productImage; // Отображаем изображение в PictureBox
+                Image productImage = (Image)selectedItem.Tag; 
+                ProductPictureBox.Image = productImage; 
             }
             else
             {
-                ProductPictureBox.Image = null; // Очищаем PictureBox, если ничего не выбрано
+                ProductPictureBox.Image = null; 
             }
         }
         private void LoadCart()
@@ -69,15 +69,11 @@ namespace Db3
                         string productName = row["name"].ToString();
                         string productPrice = row["price"].ToString();
                         string productDesc = row["description"].ToString();
-                        //string productAmount = row["amount"].ToString();
-                        byte[] productImageBytes = (byte[])row["image"]; // Преобразуем BLOB данные в байтовый массив
+                        byte[] productImageBytes = (byte[])row["image"]; 
 
-                        // Конвертируем байтовый массив в изображение
                         Image productImage = ByteArrayToImage(productImageBytes);
-
-                        // Создаем элемент ListViewItem и добавляем его в ListView
                         ListViewItem item = new ListViewItem(new string[] { productName, productDesc, productPrice });
-                        item.Tag = productImage; // Сохраняем изображение в свойстве Tag для последующего использования
+                        item.Tag = productImage; 
                         Cart.Items.Add(item);
                     }
                 }

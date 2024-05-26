@@ -73,6 +73,16 @@ namespace Db3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _12b824e0e635853bb1f13e559007720f {
+            get {
+                object obj = ResourceManager.GetObject("_12b824e0e635853bb1f13e559007720f", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1564508_home_main_room_estate_property_icon {
             get {
                 object obj = ResourceManager.GetObject("1564508_home_main_room_estate_property_icon", resourceCulture);
@@ -116,6 +126,56 @@ namespace Db3.Properties {
         internal static System.Drawing.Bitmap _4043272_avatar_lazybones_sloth_sluggard_icon1 {
             get {
                 object obj = ResourceManager.GetObject("4043272_avatar_lazybones_sloth_sluggard_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6c9a1fd0f639400b927d93ff85c9e876 {
+            get {
+                object obj = ResourceManager.GetObject("_6c9a1fd0f639400b927d93ff85c9e876", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9dce24bf941426e823775d5d95bd5bb2 {
+            get {
+                object obj = ResourceManager.GetObject("_9dce24bf941426e823775d5d95bd5bb2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DefaultUserPhoto {
+            get {
+                object obj = ResourceManager.GetObject("DefaultUserPhoto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap e50667563e425f97899db86e57037cbd {
+            get {
+                object obj = ResourceManager.GetObject("e50667563e425f97899db86e57037cbd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap e50667563e425f97899db86e57037cbd1 {
+            get {
+                object obj = ResourceManager.GetObject("e50667563e425f97899db86e57037cbd1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

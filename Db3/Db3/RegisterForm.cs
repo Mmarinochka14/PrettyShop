@@ -1,18 +1,17 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Db3.Model;
+using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Db3
 {
     public partial class RegisterForm : Form
     {
+        private byte[] photoBytes;
+
         public RegisterForm()
         {
             InitializeComponent();
@@ -29,11 +28,21 @@ namespace Db3
             LogBox.Text = "Enter name";
             LogBox.ForeColor = Color.Gray;
 
+            // Initialize photoBytes with default photo from resources
+            using (MemoryStream ms = new MemoryStream())
+            {
+                Properties.Resources.DefaultUserPhoto.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                photoBytes = ms.ToArray();
+            }
+
+            // Set default photo to PictureBox
+            pictureBoxUserPhoto.Image = Properties.Resources.DefaultUserPhoto;
         }
+    
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Application.Exit();
         }
 
         private void CloseButton_MouseEnter(object sender, EventArgs e)
@@ -63,12 +72,11 @@ namespace Db3
 
         private void PhoneBox_Enter(object sender, EventArgs e)
         {
-            if (PhoneBox.Text == "Enter phone") 
+            if (PhoneBox.Text == "Enter phone")
             {
                 PhoneBox.Text = "";
                 PhoneBox.ForeColor = Color.Black;
             }
-
         }
 
         private void PhoneBox_Leave(object sender, EventArgs e)
@@ -80,7 +88,6 @@ namespace Db3
             }
         }
 
-
         private void AddressBox_Enter(object sender, EventArgs e)
         {
             if (AddressBox.Text == "Enter address")
@@ -88,7 +95,6 @@ namespace Db3
                 AddressBox.Text = "";
                 AddressBox.ForeColor = Color.Black;
             }
-
         }
 
         private void AddressBox_Leave(object sender, EventArgs e)
@@ -107,7 +113,6 @@ namespace Db3
                 LogBox.Text = "";
                 LogBox.ForeColor = Color.Black;
             }
-
         }
 
         private void LogBox_Leave(object sender, EventArgs e)
@@ -121,7 +126,7 @@ namespace Db3
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if(LogBox.Text == "Enter name")
+            if (LogBox.Text == "Enter name")
             {
                 MessageBox.Show("Enter name");
                 return;
@@ -146,37 +151,33 @@ namespace Db3
             }
 
             DbConnector db = new DbConnector();
-            MySqlCommand command = new MySqlCommand("INSERT INTO customer (customer_id, nickname, phone, address, password) VALUES (@id, @nickname, @phone, @address, @pass)", db.GetConnection());
-            
-            Random rand = new Random();
-            int randomNumber = rand.Next(1, 10000);
+            MySqlCommand command = new MySqlCommand("INSERT INTO customer (nickname, phone, address, password, photo) VALUES (@nickname, @phone, @address, @pass, @photo)", db.GetConnection());
 
-            command.Parameters.Add("@id", MySqlDbType.VarChar).Value = randomNumber;
             command.Parameters.Add("@nickname", MySqlDbType.VarChar).Value = LogBox.Text;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = PassBox.Text;
             command.Parameters.Add("@phone", MySqlDbType.VarChar).Value = PhoneBox.Text;
             command.Parameters.Add("@address", MySqlDbType.VarChar).Value = AddressBox.Text;
+            command.Parameters.Add("@photo", MySqlDbType.Blob).Value = photoBytes;
 
             db.OpenConnection();
 
             if (CheckUserExistence())
                 return;
 
-            if(command.ExecuteNonQuery() ==1) 
+            if (command.ExecuteNonQuery() == 1)
             {
-                MessageBox.Show("Account has been successfuly created");
+                MessageBox.Show("Account has been successfully created");
                 this.Hide();
                 LoginForm loginForm = new LoginForm();
                 loginForm.Show();
             }
             else
+            {
                 MessageBox.Show("Try again");
+            }
 
             db.CloseConnection();
-
-            
         }
-
 
         public Boolean CheckUserExistence()
         {
@@ -214,5 +215,21 @@ namespace Db3
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
         }
+
+        private void buttonUploadPhoto_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = openFileDialog.FileName;
+                    pictureBoxUserPhoto.Image = Image.FromFile(filePath);
+                    photoBytes = File.ReadAllBytes(filePath);
+                }
+            }
+        }
+
     }
 }

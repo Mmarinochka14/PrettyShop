@@ -34,7 +34,6 @@ namespace Db3
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShopForm));
             this.main = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.Orders = new System.Windows.Forms.Label();
             this.LikedBtn = new System.Windows.Forms.Label();
             this.CartBtn = new System.Windows.Forms.Label();
@@ -64,7 +63,6 @@ namespace Db3
             this.main.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.main.BackColor = System.Drawing.Color.Black;
             this.main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.main.Controls.Add(this.button1);
             this.main.Controls.Add(this.Orders);
             this.main.Controls.Add(this.LikedBtn);
             this.main.Controls.Add(this.CartBtn);
@@ -80,24 +78,6 @@ namespace Db3
             this.main.Size = new System.Drawing.Size(1200, 800);
             this.main.TabIndex = 2;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateBlue;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Minecraft 1.1", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.Lavender;
-            this.button1.Location = new System.Drawing.Point(176, 688);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(354, 55);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "О товаре";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // Orders
             // 
             this.Orders.AllowDrop = true;
@@ -109,6 +89,7 @@ namespace Db3
             this.Orders.Size = new System.Drawing.Size(119, 27);
             this.Orders.TabIndex = 13;
             this.Orders.Text = "Заказы";
+            this.Orders.Click += new System.EventHandler(this.Orders_Click);
             // 
             // LikedBtn
             // 
@@ -139,9 +120,10 @@ namespace Db3
             // ProductPictureBox
             // 
             this.ProductPictureBox.BackColor = System.Drawing.Color.Black;
-            this.ProductPictureBox.Location = new System.Drawing.Point(176, 233);
+            this.ProductPictureBox.Image = global::Db3.Properties.Resources._9dce24bf941426e823775d5d95bd5bb2;
+            this.ProductPictureBox.Location = new System.Drawing.Point(193, 226);
             this.ProductPictureBox.Name = "ProductPictureBox";
-            this.ProductPictureBox.Size = new System.Drawing.Size(354, 375);
+            this.ProductPictureBox.Size = new System.Drawing.Size(346, 392);
             this.ProductPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProductPictureBox.TabIndex = 10;
             this.ProductPictureBox.TabStop = false;
@@ -152,9 +134,9 @@ namespace Db3
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(458, 614);
+            this.pictureBox1.Location = new System.Drawing.Point(475, 624);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(72, 68);
+            this.pictureBox1.Size = new System.Drawing.Size(64, 68);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -171,7 +153,7 @@ namespace Db3
             this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLogin.Font = new System.Drawing.Font("Minecraft 1.1", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BtnLogin.ForeColor = System.Drawing.Color.Lavender;
-            this.BtnLogin.Location = new System.Drawing.Point(176, 614);
+            this.BtnLogin.Location = new System.Drawing.Point(193, 624);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(276, 68);
             this.BtnLogin.TabIndex = 4;
@@ -189,7 +171,7 @@ namespace Db3
             this.Products.ForeColor = System.Drawing.Color.Lavender;
             this.Products.FullRowSelect = true;
             this.Products.HideSelection = false;
-            this.Products.Location = new System.Drawing.Point(639, 216);
+            this.Products.Location = new System.Drawing.Point(636, 206);
             this.Products.Name = "Products";
             this.Products.Size = new System.Drawing.Size(469, 499);
             this.Products.TabIndex = 3;
@@ -246,6 +228,8 @@ namespace Db3
             this.CloseButton.TabIndex = 1;
             this.CloseButton.Text = "x";
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.CloseButton.MouseEnter += new System.EventHandler(this.CloseButton_MouseEnter);
+            this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
             // 
             // label1
             // 
@@ -310,6 +294,5 @@ namespace Db3
         private System.Windows.Forms.PictureBox LogInBtn;
         private System.Windows.Forms.PictureBox LkBtn;
         private Button btnFullScreen;
-        private Button button1;
     }
 }

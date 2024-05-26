@@ -118,8 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="4043272_avatar_lazybones_sloth_sluggard_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\4043272_avatar_lazybones_sloth_sluggard_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1564508_home_main_room_estate_property_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\1564508_home_main_room_estate_property_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6c9a1fd0f639400b927d93ff85c9e876" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\6c9a1fd0f639400b927d93ff85c9e876.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="e50667563e425f97899db86e57037cbd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\e50667563e425f97899db86e57037cbd.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_12b824e0e635853bb1f13e559007720f" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\12b824e0e635853bb1f13e559007720f.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1564534_customer_man_user_account_profile_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\1564534_customer_man_user_account_profile_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="10131923_login_half_circle_line_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\10131923_login_half_circle_line_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,10 +145,16 @@
   <data name="1790670_access_key_lock_safe_safety_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\1790670_access_key_lock_safe_safety_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1564534_customer_man_user_account_profile_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\1564534_customer_man_user_account_profile_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_9dce24bf941426e823775d5d95bd5bb2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\9dce24bf941426e823775d5d95bd5bb2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1564508_home_main_room_estate_property_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\1564508_home_main_room_estate_property_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="4043272_avatar_lazybones_sloth_sluggard_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\4043272_avatar_lazybones_sloth_sluggard_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DefaultUserPhoto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\353fd23a1e1ed1a6613a5f929e7a447f.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="e50667563e425f97899db86e57037cbd1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\e50667563e425f97899db86e57037cbd.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

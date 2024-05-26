@@ -19,7 +19,7 @@ namespace Db3
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Application.Exit();
         }
 
         private void CloseButton_MouseEnter(object sender, EventArgs e)
@@ -65,6 +65,7 @@ namespace Db3
             if(dataTable.Rows.Count > 0 )
             {
                 Customer currentCustomer = new Customer();
+                currentCustomer.Id = Convert.ToInt32(dataTable.Rows[0]["customer_id"]);
                 currentCustomer.Name = LogBox.Text;
                 currentCustomer.Password = PassBox.Text;
                 currentCustomer.Address = dataTable.Rows[0]["address"].ToString();
